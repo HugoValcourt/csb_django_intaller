@@ -84,7 +84,7 @@ echo "$(tput setaf 7) 5. $(tput setab 8)You will probably have some issues with 
 echo "$(tput setaf 7) $(tput setab 8)   you will need to replace every instances of 127.0.0.1 and localhost present in the project to your machine's IP. And don't fortget to change the port if needed!$(tput sgr 0)"
 echo "$(tput setaf 7) $(tput setab 8)   To find there instances, run this command: $(tput sgr 0)"
 echo "$(tput setaf 0) $(tput setab 8)   $(tput setaf 3)sudo grep -r 127.0.0.1 & grep -r localhost$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)   Change all of those outputs EXCEPT $(tput setaf 2)localhost:8000 $(tput setaf 7) in$(tput setaf 2) csb/settings$(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 8)   Change all of those outputs from the static folder EXCEPT $(tput setaf 2)localhost:8000 $(tput setaf 7) in$(tput setaf 2) csb/settings $(tput setaf 7) and $(tput setaf 2) DATABASE_URL = 'localhost' $(tput setaf 7)in $(tput setaf 2)secret_settings.py$(tput sgr 0)"
 echo "$(tput setaf 7) 6. $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)sudo pipenv shell$(tput sgr 0)"
 echo "$(tput setaf 7) $(tput setab 8)   And you are now ready to run the server:$(tput sgr 0)"
 echo "$(tput setaf 3) $(tput setab 8)   python3 manage.py runserver 0:8000$(tput sgr 0)"
