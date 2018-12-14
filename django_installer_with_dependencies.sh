@@ -80,7 +80,7 @@ echo "$(tput setaf 7) 7. $(tput setab 8)After, go back into the virtual environm
 echo "$(tput setaf 3) $(tput setab 8)   python3 manage.py runserver 0:8080$(tput sgr 0)"
 echo ""
 echo "$(tput setaf 7) 9. $(tput setab 8)You will probably have some issues with using the 'View' button, to fix it,$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)   you will need to replace every 127.0.0.1 present in the project to your machine's IP. And don't fortget to change the port if needed!$(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 8)   you will need to replace every instance of 127.0.0.1 and localhost present in the project to your machine's IP. And don't fortget to change the port if needed!$(tput sgr 0)"
 echo "$(tput setaf 7) $(tput setab 8)   To find there instances, run this command: $(tput sgr 0)"
 echo "$(tput setaf 0) $(tput setab 8)   $(tput setaf 3)sudo grep -r 127.0.0.1$(tput sgr 0)"
 
