@@ -73,9 +73,9 @@ echo "$(tput setaf 7) $(tput setab 8)And for the file $(tput setaf 2)secret_sett
 echo "$(tput setaf 7) $(tput setab 1)When this is done, run the command within this virtualenv. If you are not in this virtual environment, it won't work.$(tput sgr 0)"
 echo "$(tput setaf 3) $(tput setab 8)python3 manage.py makemigrations$(tput sgr 0)"
 echo "$(tput setaf 3) $(tput setab 8)python3 manage.py migrate$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 1)EXIT this virtual environment first, $(tput setab 8)then run this extra long command$(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 1)EXIT this virtual environment first, $(tput setab 8)then run this extra long command:$(tput sgr 0)"
 echo '$(tput setaf 3) $(tput setab 8)sudo -u postgres psql csbcomren -c "CREATE TABLE batch_files ( batch_id INTEGER NOT NULL, file_id INTEGER NOT NULL, CONSTRAINT batch_files_pk PRIMARY KEY (batch_id, file_id), CONSTRAINT batch_files_file_fk FOREIGN KEY (file_id) REFERENCES django.upload_file ON DELETE CASCADE, CONSTRAINT batch_files_batch_fk FOREIGN KEY (batch_id) REFERENCES batches ON DELETE CASCADE );"$(tput sgr 0)'
-echo "$(tput setaf 7) $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)pipenv shell $(tput setaf 7)you are now ready to run the server: $(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)sudo pipenv shell $(tput setaf 7)you are now ready to run the server: $(tput sgr 0)"
 echo "$(tput setaf 3) $(tput setab 8)python3 manage.py runserver 0:8080$(tput sgr 0)"
 
 # If any other problem with the webpage, try running these commands in the virtual environment:
