@@ -51,6 +51,8 @@ cd ..
 git clone https://github.com/csb-comren/csb-django
 cd csb-django
 wget -O schema.sql https://raw.githubusercontent.com/csb-comren/csb-django/serverSettings/schema.sql?token=AjEYWpk6swsodEYGe26xc28sNk88o-3Dks5cGVfjwA%3D%3D
+mkdir static/tiles
+mkdir static/tiles/merged
 
 #Dependencies installation
 pipenv install
