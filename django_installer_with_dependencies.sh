@@ -79,7 +79,7 @@ echo "$(tput setaf 0) $(tput setab 8)   $(tput setaf 3)python3 manage.py migrate
 echo "$(tput setaf 7) 5. $(tput setab 1)EXIT this virtual environment first, $(tput setab 8)then run this extra long command:$(tput sgr 0)"
 echo "$(tput setaf 3) 6. $(tput setab 8)sudo -u postgres psql csbcomren -c 'CREATE TABLE batch_files ( batch_id INTEGER NOT NULL, file_id INTEGER NOT NULL, CONSTRAINT batch_files_pk PRIMARY KEY (batch_id, file_id), CONSTRAINT batch_files_file_fk FOREIGN KEY (file_id) REFERENCES django.upload_file ON DELETE CASCADE, CONSTRAINT batch_files_batch_fk FOREIGN KEY (batch_id) REFERENCES batches ON DELETE CASCADE );'$(tput sgr 0)"
 echo "$(tput setaf 7) 7. $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)sudo pipenv shell $(tput setaf 7)you are now ready to run the server: $(tput sgr 0)"
-echo "$(tput setaf 3) $(tput setab 8)   python3 manage.py runserver 0:8080$(tput sgr 0)"
+echo "$(tput setaf 3) $(tput setab 8)   python3 manage.py runserver 0:8000$(tput sgr 0)"
 echo ""
 echo "$(tput setaf 7) 8. $(tput setab 8)You will probably have some issues with using the 'View' button, to fix it,$(tput sgr 0)"
 echo "$(tput setaf 7) $(tput setab 8)   you will need to replace every instance of 127.0.0.1 and localhost present in the project to your machine's IP. And don't fortget to change the port if needed!$(tput sgr 0)"
