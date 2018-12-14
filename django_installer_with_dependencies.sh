@@ -66,17 +66,18 @@ sudo -u postgres psql postgres -c "\i schema.sql"
 cd ~/csb-django
 cp secret_settings_dummy.py secret_settings.py
 
-echo "$(tput setaf 7) $(tput setab 8)You now must edit the config of the files $(tput setaf 2)secrect_settings.py $(tput setaf 7)and $(tput setaf 2)csb/settings.py$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)In the file $(tput setaf 2)csb/settings.py$(tput setaf 7), all you need to do is add your ip to the Allowed hosts$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)ALLOWED_HOSTS = ['YOUR.IP']$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)And for the file $(tput setaf 2)secret_settings.py$(tput setaf 7), you need to fill in your database info$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 1)When this is done, run the command within this virtualenv. If you are not in this virtual environment, it won't work.$(tput sgr 0)"
-echo "$(tput setaf 3) $(tput setab 8)python3 manage.py makemigrations$(tput sgr 0)"
-echo "$(tput setaf 3) $(tput setab 8)python3 manage.py migrate$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 1)EXIT this virtual environment first, $(tput setab 8)then run this extra long command:$(tput sgr 0)"
-echo "$(tput setaf 3) $(tput setab 8)sudo -u postgres psql csbcomren -c 'CREATE TABLE batch_files ( batch_id INTEGER NOT NULL, file_id INTEGER NOT NULL, CONSTRAINT batch_files_pk PRIMARY KEY (batch_id, file_id), CONSTRAINT batch_files_file_fk FOREIGN KEY (file_id) REFERENCES django.upload_file ON DELETE CASCADE, CONSTRAINT batch_files_batch_fk FOREIGN KEY (batch_id) REFERENCES batches ON DELETE CASCADE );'$(tput sgr 0)"
-echo "$(tput setaf 7) $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)sudo pipenv shell $(tput setaf 7)you are now ready to run the server: $(tput sgr 0)"
-echo "$(tput setaf 3) $(tput setab 8)python3 manage.py runserver 0:8080$(tput sgr 0)"
+echo "$(tput setaf 7) 1. $(tput setab 8)You now must edit (with the proper rights e.g. sudo or root) the config of the files $(tput setaf 2)secret_settings.py $(tput setaf 7)and $(tput setaf 2)csb/settings.py$(tput sgr 0)"
+echo "$(tput setaf 7) 2. $(tput setab 8)In the file $(tput setaf 2)csb/settings.py$(tput setaf 7), all you need to do is add your ip to the Allowed hosts$(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 8)   ALLOWED_HOSTS = ['YOUR.IP']$(tput sgr 0)"
+echo "$(tput setaf 7) 3. $(tput setab 8)And for the file $(tput setaf 2)secret_settings.py$(tput setaf 7), you need to fill in your database info$(tput sgr 0)"
+echo "$(tput setaf 7) 4. $(tput setab 1)When this is done, run the command within this virtualenv. If you are not in this virtual environment, it won't work.$(tput sgr 0)"
+echo "$(tput setaf 7) $(tput setab 8)   The command to get in is: $(tput setaf 3)sudo pipenv shell$(tput sgr 0)"
+echo "$(tput setaf 0) $(tput setab 8)   $(tput setaf 3)python3 manage.py makemigrations$(tput sgr 0)"
+echo "$(tput setaf 0) $(tput setab 8)   $(tput setaf 3)python3 manage.py migrate$(tput sgr 0)"
+echo "$(tput setaf 7) 5. $(tput setab 1)EXIT this virtual environment first, $(tput setab 8)then run this extra long command:$(tput sgr 0)"
+echo "$(tput setaf 3) 6. $(tput setab 8)sudo -u postgres psql csbcomren -c 'CREATE TABLE batch_files ( batch_id INTEGER NOT NULL, file_id INTEGER NOT NULL, CONSTRAINT batch_files_pk PRIMARY KEY (batch_id, file_id), CONSTRAINT batch_files_file_fk FOREIGN KEY (file_id) REFERENCES django.upload_file ON DELETE CASCADE, CONSTRAINT batch_files_batch_fk FOREIGN KEY (batch_id) REFERENCES batches ON DELETE CASCADE );'$(tput sgr 0)"
+echo "$(tput setaf 7) 7. $(tput setab 8)After, go back into the virtual environment with the command: $(tput setaf 3)sudo pipenv shell $(tput setaf 7)you are now ready to run the server: $(tput sgr 0)"
+echo "$(tput setaf 3) 8. $(tput setab 8)python3 manage.py runserver 0:8080$(tput sgr 0)"
 
 # If any other problem with the webpage, try running these commands in the virtual environment:
 # python3 manage.py makemigrations
